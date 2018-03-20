@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_login">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+
+        <Button
+            android:id="@+id/btnUploadReceipt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dip"
+            android:background="@color/btn_login_bg"
+            android:text="UPLOAD RECEIPT"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_login"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnViewProducts"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dip"
+            android:background="@color/btn_login_bg"
+            android:text="VIEW PRODUCTS"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_login"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnAddProducts"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dip"
+            android:background="@color/btn_login_bg"
+            android:text="ADD PRODUCTS"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_login"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dip"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/btn_logout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>
