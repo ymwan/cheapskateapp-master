@@ -13,7 +13,6 @@
         android:layout_gravity="center"
         android:orientation="vertical" >
 
-
         <Button
             android:id="@+id/btnUploadReceipt"
             android:layout_width="fill_parent"

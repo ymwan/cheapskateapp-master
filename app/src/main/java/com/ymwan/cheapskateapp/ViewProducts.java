@@ -1,5 +1,6 @@
 package com.ymwan.cheapskateapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.SearchView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -46,7 +48,7 @@ public class ViewProducts extends AppCompatActivity {
 
     RequestQueue requestQueue ;
 
-    String HTTP_SERVER_URL = "http://10.212.77.9/android_login_api/ProductDetails.php";
+    String HTTP_SERVER_URL = AppConfig.url+"ProductDetails.php";
 
     View ChildView ;
 
@@ -104,18 +106,15 @@ public class ViewProducts extends AppCompatActivity {
                     Toast.makeText(ViewProducts.this, Products.get(RecyclerViewClickedItemPOS), Toast.LENGTH_LONG).show();
 
                 }
-
                 return false;
             }
 
             @Override
             public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
-
             }
 
             @Override
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
             }
         });
 
@@ -133,7 +132,15 @@ public class ViewProducts extends AppCompatActivity {
             }
         });
 
+        Button viewShoppingList = (Button) findViewById(R.id.ButtonViewShoppingList);
+        viewShoppingList.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent viewShoppingListIntent = new Intent(getBaseContext(), ShoppingList.class);
+                startActivity(viewShoppingListIntent);
+            }
+        });
     }
 
     public void JSON_WEB_CALL(){
@@ -171,24 +178,22 @@ public class ViewProducts extends AppCompatActivity {
 
                 GetDataAdapter2.setProductName(json.getString("product_name"));
 
-                GetDataAdapter2.setProductPrice(json.getString("product_price"));
+                //GetDataAdapter2.setProductPrice(json.getString("product_price"));
 
                 //Adding subject name here to show on click event.
                 Products.add(json.getString("product_name"));
 
-                GetDataAdapter2.setProductDate(json.getString("product_date"));
+                //GetDataAdapter2.setProductDate(json.getString("product_date"));
 
                 GetDataAdapter2.setProductStore(json.getString("product_store"));
 
             }
             catch (JSONException e)
             {
-
                 e.printStackTrace();
             }
 
             dataAdapterArrayList.add(GetDataAdapter2);
-
         }
 
         progressBar.setVisibility(View.GONE);

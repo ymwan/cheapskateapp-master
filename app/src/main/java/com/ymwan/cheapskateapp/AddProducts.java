@@ -31,7 +31,7 @@ public class AddProducts extends AppCompatActivity {
     private RequestQueue requestQueue;
     private StringRequest request;
     private Button btnSubmitData;
-    private static final String ADD_PRODUCTS_URL = "http://10.212.77.9/android_login_api/insertProduct.php";
+    private static final String ADD_PRODUCTS_URL = AppConfig.url+"addProduct.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

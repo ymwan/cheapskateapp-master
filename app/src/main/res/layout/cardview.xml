@@ -31,29 +31,6 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Product Price Show Here"
-                android:textColor="@color/black"/>
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Product Date Show Here"
-                android:textColor="@color/black"
-                />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -133,6 +133,8 @@
             android:theme="@style/FullscreenTheme.NoActionBar"/>
         <activity android:name="com.ymwan.cheapskateapp.AddProducts"
             android:theme="@style/FullscreenTheme.NoActionBar"/>
+        <activity android:name="com.ymwan.cheapskateapp.ShoppingList"
+            android:theme="@style/FullscreenTheme.NoActionBar"/>
 
         <activity
             android:name="com.ymwan.cheapskateapp.FullScreenViewActivity"

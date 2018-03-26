@@ -49,9 +49,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         viewHolder.productName.setText(dataAdapter.getProductName());
 
-        viewHolder.productPrice.setText(dataAdapter.getProductPrice());
+       // viewHolder.productPrice.setText(dataAdapter.getProductPrice());
 
-        viewHolder.productDate.setText(dataAdapter.getProductDate());
+       // viewHolder.productDate.setText(dataAdapter.getProductDate());
 
         viewHolder.productStore.setText(dataAdapter.getProductStore());
 
@@ -66,8 +66,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView productName;
-        public TextView productPrice;
-        public TextView productDate;
+        //public TextView productPrice;
+       // public TextView productDate;
         public TextView productStore;
 
         public ViewHolder(View itemView) {
@@ -75,8 +75,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 
             productName = (TextView) itemView.findViewById(R.id.textView2) ;
-            productPrice = (TextView) itemView.findViewById(R.id.textView4) ;
-            productDate = (TextView) itemView.findViewById(R.id.textView6) ;
+           // productPrice = (TextView) itemView.findViewById(R.id.textView4) ;
+            //productDate = (TextView) itemView.findViewById(R.id.textView6) ;
             productStore = (TextView) itemView.findViewById(R.id.textView8) ;
 
         }

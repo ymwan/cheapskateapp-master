@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
     private EditText password;
     private RequestQueue requestQueue;
     private StringRequest request;
-    private static final String LOGIN_URL = "http://10.212.77.9/android_login_api/user_control.php";
+    private static final String LOGIN_URL = AppConfig.url+"user_control.php";
 
 
     @Override
