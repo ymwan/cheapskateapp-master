@@ -16,39 +16,82 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/TextViewProductTitle"
+            android:id="@+id/TextViewProductName"
             android:layout_gravity="center"
             android:layout_margin="5dip"
-            android:textSize="26dip"
+            android:textSize="26sp"
             android:text="Product Name"
             android:textColor="#000000"></TextView>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LinearLayoutDate"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_height="wrap_content"
             android:id="@+id/TextViewProductPrice"
             android:layout_width="fill_parent"
             android:layout_margin="5dip"
+            android:layout_weight="1"
             android:textColor="#000000"
             android:text="Product Price"
-            android:textStyle="bold"></TextView>
+            android:layout_below="@+id/TextViewProductName"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:id="@+id/TextViewProductDate"
+            android:layout_width="fill_parent"
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:text="Product Date"
+            android:layout_below="@+id/TextViewProductPrice"
+            android:textSize="20sp"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LinearLayoutStore"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:id="@+id/TextViewProductStore"
+            android:layout_width="fill_parent"
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:text="Product Store"
+            android:layout_below="@+id/TextViewProductDate"
+            android:textSize="20sp"></TextView>
+
 
     </LinearLayout>
 
 
-    <TextView
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewProductDate"
         android:layout_width="fill_parent"
-        android:layout_margin="5dip"
-        android:layout_weight="1"
-        android:textColor="#000000"
-        android:text="Product Date"></TextView>
+        android:id="@+id/linearLayoutCurrentlyInCart">
+
+        <TextView
+            android:id="@+id/textViewCurrentlyInCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:textColor="#000000"
+            android:layout_marginTop="200dp"
+            android:text="Currently in Cart:"
+            android:layout_margin="5dip"></TextView>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_height="wrap_content"
