@@ -28,7 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class ViewProducts extends AppCompatActivity {
+public class ViewProducts extends AppCompatActivity implements RecyclerViewAdapter.OnItemClickListener{
 
     private ArrayList<DataAdapter> dataAdapterArrayList = new ArrayList<>();
 
@@ -53,6 +53,11 @@ public class ViewProducts extends AppCompatActivity {
     View ChildView ;
 
     int RecyclerViewClickedItemPOS ;
+
+    public static final String product_name = "productName";
+    public static final String product_price = "productPrice";
+    public static final String product_date = "productDate";
+    public static final String product_store = "productStore";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +86,10 @@ public class ViewProducts extends AppCompatActivity {
 
         recyclerView.setAdapter(recyclerViewadapter);
 
+        recyclerViewadapter.setOnItemClickListener(ViewProducts.this);
+
         //RecyclerView Item click listener code starts from here.
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+     /*  recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
             GestureDetector gestureDetector = new GestureDetector(ViewProducts.this, new GestureDetector.SimpleOnGestureListener() {
 
@@ -104,6 +111,9 @@ public class ViewProducts extends AppCompatActivity {
 
                     //Printing RecyclerView Clicked item clicked value using Toast Message.
                     Toast.makeText(ViewProducts.this, Products.get(RecyclerViewClickedItemPOS), Toast.LENGTH_LONG).show();
+//                    Intent productDetailsIntent = new Intent(getBaseContext(),ProductDetails.class);
+//                    productDetailsIntent.putExtra(ShoppingListHelper.PRODUCT_INDEX, position);
+//                    startActivity(productDetailsIntent);
 
                 }
                 return false;
@@ -116,7 +126,7 @@ public class ViewProducts extends AppCompatActivity {
             @Override
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
             }
-        });
+        });*/
 
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -141,6 +151,8 @@ public class ViewProducts extends AppCompatActivity {
                 startActivity(viewShoppingListIntent);
             }
         });
+
+
     }
 
     public void JSON_WEB_CALL(){
@@ -200,5 +212,18 @@ public class ViewProducts extends AppCompatActivity {
 
         // refresh the adapter
         recyclerViewadapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(this, ProductDetails.class);
+        DataAdapter clickedItem = dataAdapterArrayList.get(position);
+
+        detailIntent.putExtra(product_name,clickedItem.getProductName());
+        detailIntent.putExtra(product_price,clickedItem.getProductPrice());
+        detailIntent.putExtra(product_date,clickedItem.getProductDate());
+        detailIntent.putExtra(product_store,clickedItem.getProductStore());
+
+        startActivity(detailIntent);
     }
 }
