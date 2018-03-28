@@ -23,6 +23,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     CustomFilter filter;
 
+    public OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+
+        mListener = listener;
+    }
+
     public RecyclerViewAdapter(List<DataAdapter> getDataAdapter, Context context){
 
         super();
@@ -78,6 +89,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
            // productPrice = (TextView) itemView.findViewById(R.id.textView4) ;
             //productDate = (TextView) itemView.findViewById(R.id.textView6) ;
             productStore = (TextView) itemView.findViewById(R.id.textView8) ;
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }
