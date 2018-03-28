@@ -47,7 +47,7 @@
         android:layout_gravity="right">
 
         <Button
-            android:id="@+id/Button02"
+            android:id="@+id/btnSearchStore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search Nearest Store"></Button>
