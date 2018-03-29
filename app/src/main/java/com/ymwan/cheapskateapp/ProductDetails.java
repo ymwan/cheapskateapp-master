@@ -33,7 +33,7 @@ public class ProductDetails extends AppCompatActivity{
 
         Intent intent = getIntent();
         String productName = intent.getStringExtra(product_name);
-        double productPrice = intent.getDoubleExtra(product_price,0);
+        double productPrice = intent.getDoubleExtra(product_price,0.0);
         String productDate = intent.getStringExtra(product_date);
         String productStore = intent.getStringExtra(product_store);
 
@@ -112,4 +112,5 @@ public class ProductDetails extends AppCompatActivity{
     }
 
 }
+
 
