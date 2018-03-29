@@ -15,6 +15,7 @@
         android:layout_margin="5dip"
         android:text="Shopping List"></TextView>
 
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -31,13 +32,6 @@
         android:text="Subtotal"
         android:textStyle="bold"></TextView>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/white"
-        ></android.support.v7.widget.RecyclerView>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +46,13 @@
             android:layout_height="wrap_content"
             android:text="Search Nearest Store"></Button>
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        ></android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>
